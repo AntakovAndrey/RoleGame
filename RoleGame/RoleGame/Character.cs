@@ -1,6 +1,4 @@
-﻿using System.Data.Common;
-
-namespace RoleGame
+﻿namespace RoleGame
 {
     public enum characterState
     {
@@ -24,11 +22,10 @@ namespace RoleGame
     public enum characterGender
     {
         male,
-        female,
-        none
+        female
     }
 
-    internal class Character
+    public class Character
     {
         private int id;
         private string name;
@@ -59,7 +56,27 @@ namespace RoleGame
         public bool IsAbleToSpeak { get { return isAbleToSpeak; } }
         public bool IsAbleToMove { get { return isAbleToMove; } }
         public characterRace Race { get { return race; } }
-        public int Age { get { return age; }set { age = value; } }
-        public double Health { get { return health; }set { health = value; } }
+        public int Age { get { return age; } set { age = value; } }
+        public double Health { 
+            get { return health; }
+            set {
+                if (value < 0)
+                    health = 0;
+                else if (value > maxHealth)
+                    health = 100;
+                else
+                    health = value; 
+            } 
+        }
+        public double MaxHealth
+        {
+            get { return maxHealth; }
+        }
+        public int Experience
+        {
+            get { return experience; }
+        }
+
+
     }
 }
