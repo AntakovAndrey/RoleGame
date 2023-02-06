@@ -1,4 +1,6 @@
-﻿namespace RoleGame
+using System;
+
+namespace RoleGame
 {
     public enum characterState
     {
@@ -24,6 +26,7 @@
         male,
         female
     }
+
 
     internal class Character:IComparable<Character>
     {
@@ -56,6 +59,7 @@
         public bool IsAbleToSpeak { get { return isAbleToSpeak; } }
         public bool IsAbleToMove { get { return isAbleToMove; } }
         public characterRace Race { get { return race; } }
+
         public int Age { get { return age; } set { age = value; } }
         public double Health { 
             get { return health; }
@@ -77,6 +81,9 @@
             get { return experience; }
         }
 
-
+        public int CompareTo(Character character)
+        {
+            return experience.CompareTo(character.experience);
+        }
     }
 }
