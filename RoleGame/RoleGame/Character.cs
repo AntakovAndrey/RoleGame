@@ -1,4 +1,6 @@
-﻿using System.Data.Common;
+﻿using System;
+using System.Collections;
+using System.Data.Common;
 
 namespace RoleGame
 {
@@ -28,7 +30,7 @@ namespace RoleGame
         none
     }
 
-    internal class Character
+    internal class Character:IComparable<Character>
     {
         private int id;
         private string name;
@@ -61,5 +63,11 @@ namespace RoleGame
         public characterRace Race { get { return race; } }
         public int Age { get { return age; }set { age = value; } }
         public double Health { get { return health; }set { health = value; } }
+
+        public int CompareTo(Character character)
+        {
+            return experience.CompareTo(character.experience);
+        }
+        
     }
 }
