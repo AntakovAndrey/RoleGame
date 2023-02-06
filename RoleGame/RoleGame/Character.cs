@@ -68,6 +68,5 @@ namespace RoleGame
         {
             return experience.CompareTo(character.experience);
         }
-        
     }
 }
