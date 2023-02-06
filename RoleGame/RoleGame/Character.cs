@@ -25,7 +25,7 @@
         female
     }
 
-    public class Character
+    internal class Character:IComparable<Character>
     {
         private int id;
         private string name;
