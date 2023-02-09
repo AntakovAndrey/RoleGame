@@ -11,9 +11,18 @@ namespace RoleGame
         private double mana;
         private double maxValue;
         public double Mana
-        { get => mana; set => mana = value; }
+        {
+            get => mana;
+            set
+            {
+                if(value < 0)
+                    mana = 0;
+                else if(value > maxValue)
+                    mana = maxValue;
+            }
+        }
         public double MaxValue
-        { get => maxValue; set => maxValue = value; }
+        { get => maxValue;}
         public CharecerMag(double mana,double maxValue,string name, characterState state, characterRace race, characterGender gender) : base(name, state, race, gender)
         {
             this.mana = mana;
@@ -26,7 +35,8 @@ namespace RoleGame
                 Console.WriteLine("Невозможно воспользоваться заклинанием");
                 return;
             }
-            obj.
+            obj.Health += mana / 2;
+            this.mana -= mana;
         }
     }
 }

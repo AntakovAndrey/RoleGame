@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artefact.cs" />
+    <Compile Include="BattleOfLivingWater.cs" />
+    <Compile Include="BottleOfDeadWater.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharecerMag.cs" />
     <Compile Include="Program.cs" />
