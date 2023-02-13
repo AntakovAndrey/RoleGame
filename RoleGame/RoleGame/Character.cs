@@ -28,7 +28,7 @@ namespace RoleGame
     }
 
 
-    internal class Character:IComparable<Character>
+    public class Character:IComparable<Character>
     {
         private int id;
         private string name;

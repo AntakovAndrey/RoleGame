@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoleGame
 {
-    internal class CharecerMag : Character
+    public class CharacterMag : Character
     {
         private double mana;
         private double maxValue;
@@ -23,7 +23,7 @@ namespace RoleGame
         }
         public double MaxValue
         { get => maxValue;}
-        public CharecerMag(double mana,double maxValue,string name, characterState state, characterRace race, characterGender gender) : base(name, state, race, gender)
+        public CharacterMag(double mana,double maxValue,string name, characterState state, characterRace race, characterGender gender) : base(name, state, race, gender)
         {
             this.mana = mana;
             this.maxValue = maxValue;
