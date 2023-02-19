@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoleGame", "RoleGame\RoleGame.csproj", "{282B8D91-5A1C-4D44-A05C-4E12C77C7CB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "Forms\Forms.csproj", "{A6E4B1BE-DD8C-40BA-8AE6-F5B8AD06E628}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{282B8D91-5A1C-4D44-A05C-4E12C77C7CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282B8D91-5A1C-4D44-A05C-4E12C77C7CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282B8D91-5A1C-4D44-A05C-4E12C77C7CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E4B1BE-DD8C-40BA-8AE6-F5B8AD06E628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E4B1BE-DD8C-40BA-8AE6-F5B8AD06E628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E4B1BE-DD8C-40BA-8AE6-F5B8AD06E628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E4B1BE-DD8C-40BA-8AE6-F5B8AD06E628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
