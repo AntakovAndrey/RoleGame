@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Forms.Engine
 {
@@ -63,20 +58,26 @@ namespace Forms.Engine
             }
         }
 
-        public KeysConfig LoadConfig()
+        public static KeysConfig LoadConfig()
         {
-
-            
-
-
-            return this;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(KeysConfig));
+            using (FileStream fs = new FileStream("Data\\KeysConfig.xml", FileMode.OpenOrCreate))
+            {
+                return xmlSerializer.Deserialize(fs) as KeysConfig;
+            }
         }
-
-        public KeysConfig RestartConfig()
+        public static void RestartConfig()
         {
-            string defaultConfig = "Data\\DefaultKeysConfig.xml";
-            return this; 
+            KeysConfig config;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(KeysConfig));
+            using (FileStream fs = new FileStream("Data\\DefaultKeysConfig.xml", FileMode.OpenOrCreate))
+            {
+                config = xmlSerializer.Deserialize(fs) as KeysConfig;
+            }
+            using (FileStream fileStream = new FileStream("Data\\KeysConfig.xml", FileMode.OpenOrCreate))
+            {
+                xmlSerializer.Serialize(fileStream, config);
+            }
         }
-
     }
 }
