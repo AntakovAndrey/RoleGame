@@ -19,6 +19,7 @@ namespace Forms.Engine
             Graphics g = Graphics.FromImage(bitmap);
             scene.DrawBack(g, resolution.X, resolution.Y);
             scene.DrawObjects(g);
+            
             return bitmap;
         }
         public static Vector Resolution => resolution;

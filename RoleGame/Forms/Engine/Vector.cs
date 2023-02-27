@@ -1,6 +1,6 @@
 ﻿namespace Forms.Engine
 {
-    internal class Vector
+    public class Vector
     {
         int x;
         int y;
