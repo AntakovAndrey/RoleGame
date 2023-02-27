@@ -127,5 +127,9 @@ namespace RoleGame
         {   
             graphics.DrawImage(this.characterImage,this.currentPosition.X,this.currentPosition.Y,this.size.X,this.size.Y);
         }
+        public override string ToString()
+        {
+            return $"Имя {name}, Жизнь {health}";
+        }
     }
 }
