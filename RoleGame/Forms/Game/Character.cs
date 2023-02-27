@@ -46,8 +46,8 @@ namespace RoleGame
         private Image characterImage;
         private Vector currentPosition;
         private Vector size;
-
-        public Character(string name, characterState state, characterRace race, characterGender gender,Vector startPosition, Vector size)
+        private Inventory inventory;
+        public Character(string name, characterState state, characterRace race, characterGender gender,Vector startPosition, Vector size, Inventory inventory)
         {
             this.name = name;
             this.state = state;
@@ -59,6 +59,7 @@ namespace RoleGame
             this.characterImage = this.LoadImage(race);
             this.currentPosition = startPosition;
             this.size = size;
+            this.inventory = inventory;
         }
 
         public int Id { get { return id; } }
@@ -88,7 +89,8 @@ namespace RoleGame
         {
             get { return experience; }
         }
-
+        public Inventory Inventory
+        { get => inventory; set => inventory = value; }
         private Image LoadImage(characterRace race)
         {
             switch (race)
@@ -124,6 +126,10 @@ namespace RoleGame
         public void Draw(Graphics graphics)
         {   
             graphics.DrawImage(this.characterImage,this.currentPosition.X,this.currentPosition.Y,this.size.X,this.size.Y);
+        }
+        public override string ToString()
+        {
+            return $"Имя {name}, Жизнь {health}";
         }
     }
 }

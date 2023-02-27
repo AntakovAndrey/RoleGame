@@ -66,6 +66,7 @@
     <Compile Include="BottleOfDeadWater.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterMag.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Magic\AddHealth.cs" />
     <Compile Include="Magic\Alive.cs" />
     <Compile Include="Magic\AniPoison.cs" />

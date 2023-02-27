@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RoleGame
 {
-    public abstract class Artefact
+    public class Inventory
     {
-        protected double power;
-        protected bool renovation;
+
     }
 }
