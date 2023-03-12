@@ -9,6 +9,8 @@ namespace RoleGame
 {
     public class Inventory
     {
+
+        public Inventory() { }
         protected List<InventoryCell> inventory;
         public List<InventoryCell> Inventory1
         { get => inventory; set => inventory = value; }
@@ -24,10 +26,14 @@ namespace RoleGame
         {
             inventory.Remove(artefact);
         }
-        public void ToPassArtefact(Character character,InventoryCell artefact)
+        public void ToPassArtefact(Character character, InventoryCell artefact)
         {
             character.Inventory.AddArtefact(artefact);
             inventory.Remove(artefact);
+        }
+        public void UseArtefact(InventoryCell artefact,Character character)
+        {
+            character.
         }
     }
 }

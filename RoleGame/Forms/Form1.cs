@@ -70,7 +70,7 @@ namespace Forms
             else if (this.radioButton13.Checked == true)
                 state = characterState.dead;
 
-            this.currentScene.addObject(new Character(name, state,race, gender, new Vector(xPos, yPos), new Vector(100, 100)));
+            this.currentScene.addObject(new Character(name, state,race, gender, new Vector(xPos, yPos), new Vector(100, 100),new Inventory()));
         }
 
         private void button2_Click(object sender, EventArgs e)
