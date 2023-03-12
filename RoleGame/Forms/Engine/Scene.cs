@@ -5,7 +5,7 @@ namespace Forms.Engine
     internal class Scene:IScene
     {
         Image back;
-
+        
         private KeysConfig config = KeysConfig.LoadConfig();
 
         private List<IGameObject> objects;
@@ -15,10 +15,11 @@ namespace Forms.Engine
 
         public Scene()        
         {
+            KeysConfig.RestartConfig();
             back = Image.FromFile("resources\\background.jpg");
             objects = new List<IGameObject>();
             
-            addObject(new Character("Человек", characterState.normal, characterRace.dwarf, characterGender.male, new Vector(100, 100), new Vector(100, 100)));
+            addObject(new Character("Человек", characterState.normal, characterRace.dwarf, characterGender.male, new Vector(100, 100), new Vector(100, 100), new Inventory()));
             this.playableCharacterIndex = 0;
         }
 

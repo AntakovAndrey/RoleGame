@@ -24,7 +24,7 @@ namespace RoleGame
         }
         public double MaxValue
         { get => maxValue;}
-        public CharacterMag(double mana,double maxValue,string name, characterState state, characterRace race, characterGender gender, Vector startPosition, Vector size) : base(name, state, race, gender,startPosition,size)
+        public CharacterMag(double mana,double maxValue,string name, characterState state, characterRace race, characterGender gender, Vector startPosition, Vector size, Inventory inventory ) : base(name, state, race, gender,startPosition,size, inventory)
         {
             this.mana = mana;
             this.maxValue = maxValue;
