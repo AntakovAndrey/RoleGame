@@ -17,6 +17,8 @@ namespace Forms.Game
         private Vector size;
         private int health;
         private List<Character> characters;
+        public int Health
+        { get { return health; } set { health = value; } }
 
         public Tree(Vector currentPosition, Vector size, int health)
         {
