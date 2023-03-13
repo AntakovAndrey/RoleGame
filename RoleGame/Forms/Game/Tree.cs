@@ -23,6 +23,7 @@ namespace Forms.Game
             this.currentPosition = currentPosition;
             this.size = size;
             this.health = health;
+            LoadNormalTree();
         }
 
 
@@ -57,7 +58,7 @@ namespace Forms.Game
 
         public void Move(Vector direction)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 

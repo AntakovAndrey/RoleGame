@@ -41,6 +41,11 @@ namespace Forms
             };
         }
 
+        public void updateCharactersList()
+        {
+            this.listBox1.Items.AddRange(this.currentScene.)
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {   
             if (e.KeyValue==(char)currentScene.Config.KeyUp)
