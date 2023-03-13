@@ -220,5 +220,11 @@ namespace Forms
             if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is CharacterMag character)
                 character.CurrentMagicIndex = this.listBox3.SelectedIndex;
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
+                character.PerfomDamage(this.currentScene.Objects[character.CurrentAimIndex]);
+        }
     }
 }

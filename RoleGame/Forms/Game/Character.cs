@@ -1,4 +1,5 @@
 using Forms.Engine;
+using Forms.Game;
 using System;
 using System.Security.Cryptography;
 
@@ -31,6 +32,9 @@ namespace RoleGame
 
     public class Character:IComparable<Character>,IGameObject
     {
+        public int CurrentAimIndex { get; set; }
+
+
         private int id;
         private string name;
         private characterState state;
@@ -61,7 +65,13 @@ namespace RoleGame
             this.size = size;
             this.inventory = inventory;
         }
-
+        public void PerfomDamage(IGameObject aim)
+        {
+            if (aim is Character character)
+                character.health -= 10;
+            if(aim is Tree tree)
+                tree.Health -= 15;
+        }
         public int Id { get { return id; } }
         public string Name { get { return name; } }
         public characterState State { get { return state; } set { state = value; } }
