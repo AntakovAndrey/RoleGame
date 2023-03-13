@@ -1,4 +1,5 @@
 ﻿using Forms.Engine;
+using RoleGame.Magic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace RoleGame
     {
         private double mana;
         private double maxValue;
+        private List<IMagic> magics;
+        public List<IMagic> Magics
+        { get => magics; }
         public double Mana
         {
             get => mana;

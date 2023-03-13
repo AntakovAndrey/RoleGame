@@ -21,8 +21,13 @@ namespace Forms
                 this.radioButton1,
                 this.radioButton2
             };
+            updateCurrentMagicsList();
+        }
 
-
+        public void updateCurrentMagicsList()
+        {
+            if (this.currentScene.Objects[currentScene.PlayableCharacterIndex] is CharacterMag mag)
+                this.listBox3.Items.AddRange(mag.Magics.ToArray());
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
