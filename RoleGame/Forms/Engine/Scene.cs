@@ -6,8 +6,8 @@ namespace Forms.Engine
     internal class Scene:IScene
     {
         Image back;
-        
-        private KeysConfig config = KeysConfig.LoadConfig();
+
+        private KeysConfig config;
 
         private List<IGameObject> objects;
         private Tree tree; 
@@ -25,7 +25,7 @@ namespace Forms.Engine
 
         public Scene()        
         {
-            KeysConfig.RestartConfig();
+            config = KeysConfig.LoadConfig();
             back = Image.FromFile("resources\\background.jpg");
             objects = new List<IGameObject>();
             Tree tree = new Tree(new Vector(500, 500), new Vector(100, 100), 100);
@@ -52,7 +52,7 @@ namespace Forms.Engine
 
         public void DrawObjects(Graphics g)
         {
-            tree.Draw()
+            tree.Draw(g);
             foreach(var obj in objects)
             {
                 obj.Draw(g);
