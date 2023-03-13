@@ -10,9 +10,9 @@ namespace Forms.Game.Artefacts
 {
     public abstract class Artefact
     {
-        protected double power;
+        protected int power;
         protected bool renovation;
-        public abstract void Perform(IGameObject aim);
+        public abstract void Perform(IGameObject aim, int power);
 
     }
 }

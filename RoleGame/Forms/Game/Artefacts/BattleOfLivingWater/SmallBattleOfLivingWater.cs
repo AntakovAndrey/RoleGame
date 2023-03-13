@@ -22,7 +22,7 @@ namespace Forms.Game.Artefacts.BattleOfLivingWater
         //    Console.WriteLine("Здоровье персонажа увеличено на 50 едениц");
         //}
 
-        public override void Perform(IGameObject aim)
+        public override void Perform(IGameObject aim, int power)
         {
             if (aim is Character character)
                 character.Health += 10;

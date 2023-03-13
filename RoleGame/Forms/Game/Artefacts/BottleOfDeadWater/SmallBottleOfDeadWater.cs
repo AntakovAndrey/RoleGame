@@ -27,7 +27,7 @@ namespace Forms.Game.Artefacts.BottleOfLivingWater
         //    Console.WriteLine("Mана персонажа увеличено на 50 едениц");
         //}
 
-        public override void Perform(IGameObject aim)
+        public override void Perform(IGameObject aim, int power)
         {
             if(aim is CharacterMag mag)
                 mag.Mana+= 10;

@@ -10,7 +10,7 @@ namespace Forms.Game.Artefacts.BattleOfLivingWater
 {
     internal class BigBattleOfLivingWater : Artefact
     {
-        public override void Perform(IGameObject aim)
+        public override void Perform(IGameObject aim, int power)
         {
             if (aim is Character character)
                 character.Health += 50;

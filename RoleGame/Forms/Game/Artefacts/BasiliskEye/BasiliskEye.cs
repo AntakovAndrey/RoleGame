@@ -6,14 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forms.Game.Artefacts.BattleOfLivingWater
+namespace Forms.Game.Artefacts.BasiliskEye
 {
-    internal class AvvarageBattleOfLivingWater : Artefact
+    internal class BasiliskEye : Artefact
     {
         public override void Perform(IGameObject aim, int power)
         {
             if (aim is Character character)
-                character.Health += 25;
+            {
+                if (character.State == characterState.dead)
+                    return;
+                character.State = characterState.paralyzed;
+            }
         }
     }
 }
