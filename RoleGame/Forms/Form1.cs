@@ -54,6 +54,7 @@ namespace Forms
             updateCurrentArtefactsList();
             updateAllArtefactsList();
             updateCharactersList();
+            updateAimsList();
         }
 
         public void updateCurrentMagicsList()
@@ -119,6 +120,12 @@ namespace Forms
             this.listBox1.Items.AddRange(this.currentScene.Objects.ToArray());
         }
 
+        public void updateAimsList()
+        {
+            this.listBox2.Items.Clear();
+            this.listBox2.Items.AddRange(this.currentScene.Objects.ToArray());
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {   
             if (e.KeyValue==(char)currentScene.Config.KeyUp)
@@ -150,6 +157,7 @@ namespace Forms
             updateCurrentArtefactsList();
             updateAllArtefactsList();
             updateCharactersList();
+            updateAimsList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -166,6 +174,7 @@ namespace Forms
             updateCurrentArtefactsList();
             updateAllArtefactsList();
             updateCharactersList();
+            updateAimsList();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -186,6 +195,7 @@ namespace Forms
             updateCurrentArtefactsList();
             updateAllArtefactsList();
             updateCharactersList();
+            updateAimsList();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -202,6 +212,7 @@ namespace Forms
             updateCurrentArtefactsList();
             updateAllArtefactsList();
             updateCharactersList();
+            updateAimsList();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -213,6 +224,7 @@ namespace Forms
             updateCurrentArtefactsList();
             updateAllArtefactsList();
             updateCharactersList();
+            updateAimsList();
         }
 
         private void button5_Click(object sender, EventArgs e)
