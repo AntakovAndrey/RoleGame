@@ -33,7 +33,7 @@ namespace RoleGame
         }
         public void UseArtefact(InventoryCell artefact,Character character)
         {
-            //character.
+            var type = artefact.Cell.GetType();
         }
     }
 }

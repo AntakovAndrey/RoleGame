@@ -1,4 +1,4 @@
-﻿using RoleGame;
+﻿using Forms.Game.Artefacts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
