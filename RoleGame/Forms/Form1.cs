@@ -18,13 +18,13 @@ namespace Forms
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {   
             if (e.KeyValue==(char)currentScene.Config.KeyUp)
-                this.currentScene.movePlayableCharacter(new Vector(0,1));
+                this.currentScene.movePlayableCharacter(new Vector(0,-10));
             if (e.KeyValue == (char)currentScene.Config.KeyDown)
-                this.currentScene.movePlayableCharacter(new Vector(0, -1));
+                this.currentScene.movePlayableCharacter(new Vector(0, 10));
             if (e.KeyValue == (char)currentScene.Config.KeyLeft)
-                this.currentScene.movePlayableCharacter(new Vector(-1, 0));
+                this.currentScene.movePlayableCharacter(new Vector(-10, 0));
             if (e.KeyValue == (char)currentScene.Config.KeyRight)
-                this.currentScene.movePlayableCharacter(new Vector(1, 0));
+                this.currentScene.movePlayableCharacter(new Vector(10, 0));
         }
 
         private void timer1_Tick(object sender, EventArgs e)

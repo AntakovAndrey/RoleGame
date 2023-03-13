@@ -15,17 +15,17 @@ namespace Forms
         private Vector currentPosition;
         private Vector size;
         private int health;
+        private List<Character> characters;
         public Tree(Vector currentPosition, Vector size,int health)
         {
             this.currentPosition = currentPosition;
             this.size = size;
             this.health=health;
         }
-        public void /*Character*/ Damage(/*Character character,List<Character> characters*/)
+        public void Damage()
         {
             ThreadStart threadStart;
-            threadStart = Start;
-            var start = new System.Threading.ThreadStart(threadStart/*Start*/);
+            var start = new System.Threading.ThreadStart(Start);
             var thread = new System.Threading.Thread(start);
             thread.Start();
         }
@@ -45,7 +45,7 @@ namespace Forms
         {
             throw new NotImplementedException();
         }
-        public void Start(List<Character> characters)
+        public void Start()
         {
             while (health > 0)
             {

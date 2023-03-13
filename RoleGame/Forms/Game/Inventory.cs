@@ -34,9 +34,6 @@ namespace RoleGame
         public void UseArtefact(InventoryCell artefact,Character character)
         {
             var type = artefact.Cell.GetType();
-
-            //
-            //character
         }
     }
 }
