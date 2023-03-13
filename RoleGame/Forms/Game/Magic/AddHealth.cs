@@ -30,5 +30,9 @@ namespace RoleGame.Magic
         {
             aimCharacter.Health += this.magCharacter.Mana * impactForce / 2;
         }
+        public override string ToString()
+        {
+            return "Добавить здоровье";
+        }
     }
 }

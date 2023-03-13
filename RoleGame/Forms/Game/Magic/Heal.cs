@@ -75,5 +75,9 @@ namespace RoleGame.Magic
                 return;
             }
         }
+        public override string ToString()
+        {
+            return "Вылечить";
+        }
     }
 }

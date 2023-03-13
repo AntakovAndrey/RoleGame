@@ -19,6 +19,11 @@ namespace Forms.Game.Artefacts.LightningStaff
                 character.Health-=power;
                 this.power-=power;
             }
+            
+        }
+        public override string ToString()
+        {
+            return "Посох молния";
         }
     }
 }

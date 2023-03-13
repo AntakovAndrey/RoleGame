@@ -15,5 +15,9 @@ namespace Forms.Game.Artefacts.BottleOfLivingWater
             if (aim is CharacterMag mag)
                 mag.Mana += 25;
         }
+        public override string ToString()
+        {
+            return "Средняя бутылка мертвой воды";
+        }
     }
 }

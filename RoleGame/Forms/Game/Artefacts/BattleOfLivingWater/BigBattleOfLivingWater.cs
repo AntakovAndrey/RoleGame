@@ -15,5 +15,9 @@ namespace Forms.Game.Artefacts.BattleOfLivingWater
             if (aim is Character character)
                 character.Health += 50;
         }
+        public override string ToString()
+        {
+            return "Большая бутылка живой воды";
+        }
     }
 }
