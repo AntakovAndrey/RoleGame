@@ -1,4 +1,5 @@
 using Forms.Engine;
+using Forms.Game;
 using Forms.Game.Artefacts;
 using Forms.Game.Artefacts.BasiliskEye;
 using Forms.Game.Artefacts.BattleOfLivingWater;
@@ -48,15 +49,20 @@ namespace Forms
                 this.radioButton12,
                 this.radioButton13
             };
-            
-
             updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
         }
 
         public void updateCurrentMagicsList()
         {
             if (this.currentScene.Objects[currentScene.PlayableCharacterIndex] is CharacterMag mag)
+            {
+                this.listBox3.Items.Clear();
                 this.listBox3.Items.AddRange(mag.Magics.ToArray());
+            }  
         }
 
         public void updateAllMagicsList()
@@ -71,6 +77,7 @@ namespace Forms
                     new Heal(mag),
                     new Otomri(mag)
                 };
+                this.listBox4.Items.Clear();
                 this.listBox4.Items.AddRange(allMagics);
             }
         }
@@ -91,22 +98,25 @@ namespace Forms
                     new Decoct(),
                     new LightningStaff()
                 };
+                this.listBox6.Items.Clear();
                 this.listBox6.Items.AddRange(allArtefacts);
             }
         }
-        public void ListArtefact()
+        public void updateCurrentArtefactsList()
         {
             List<Artefact> artefacts = new List<Artefact>();
             if(this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
                 foreach(var cell in character.Inventory.Cells)
                     artefacts.Add(cell.Cell);
+            this.listBox5.Items.Clear();
             this.listBox5.Items.AddRange(artefacts.ToArray());
 
         }
 
         public void updateCharactersList()
         {
-            this.listBox1.Items.AddRange(this.currentScene.)
+            this.listBox1.Items.Clear();
+            this.listBox1.Items.AddRange(this.currentScene.Objects.ToArray());
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -135,6 +145,11 @@ namespace Forms
             characterRace race = (characterRace)Array.IndexOf(raceRadioButtons, raceRadioButtons.FirstOrDefault(x => x.Checked == true));
             characterState state = (characterState)Array.IndexOf(stateRadioButtons, stateRadioButtons.FirstOrDefault(x => x.Checked == true));
             this.currentScene.addObject(new Character(name, state,race, gender, new Vector(xPos, yPos), new Vector(100, 100),new Inventory()));
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,7 +160,12 @@ namespace Forms
             characterGender gender = (characterGender)Array.IndexOf(genderRadioButtons, genderRadioButtons.FirstOrDefault(x => x.Checked == true));
             characterRace race = (characterRace)Array.IndexOf(raceRadioButtons, raceRadioButtons.FirstOrDefault(x => x.Checked == true));
             characterState state = (characterState)Array.IndexOf(stateRadioButtons, stateRadioButtons.FirstOrDefault(x => x.Checked == true));
-            this.currentScene.addObject(new Character(name, state, race, gender, new Vector(xPos, yPos), new Vector(100, 100), new Inventory()));
+            this.currentScene.addObject(new CharacterMag(100, 100,name, state, race, gender, new Vector(xPos, yPos), new Vector(100, 100), new Inventory()));
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -161,11 +181,44 @@ namespace Forms
         private void button3_Click(object sender, EventArgs e)
         {
             this.currentScene.PlayableCharacterIndex=this.listBox1.SelectedIndex;
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.currentScene.PlayableCharacterIndex = this.listBox1.SelectedIndex;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
+                character.Inventory.AddArtefact(new InventoryCell((Artefact)this.listBox6.Items[this.listBox6.SelectedIndex]));
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is CharacterMag character)
+                character.Magics.Add((IMagic)(this.listBox4.Items[this.listBox4.SelectedIndex]));
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is CharacterMag character)
+                character.CurrentMagicIndex = this.listBox3.SelectedIndex;
         }
     }
 }

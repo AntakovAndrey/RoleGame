@@ -10,7 +10,10 @@ namespace RoleGame
     public class Inventory
     {
 
-        public Inventory() { }
+        public Inventory() 
+        {
+            this.inventory = new List<InventoryCell>();
+        }
         protected List<InventoryCell> inventory;
         public List<InventoryCell> Cells
         { get => inventory; set => inventory = value; }

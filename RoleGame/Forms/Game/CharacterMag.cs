@@ -13,8 +13,10 @@ namespace RoleGame
         private double mana;
         private double maxValue;
         private List<IMagic> magics;
-        public List<IMagic> Magics
-        { get => magics; }
+        public List<IMagic> Magics { get => magics; }
+        
+        public int CurrentMagicIndex { get; set; }
+
         public double Mana
         {
             get => mana;
@@ -30,6 +32,7 @@ namespace RoleGame
         { get => maxValue;}
         public CharacterMag(double mana,double maxValue,string name, characterState state, characterRace race, characterGender gender, Vector startPosition, Vector size, Inventory inventory ) : base(name, state, race, gender,startPosition,size, inventory)
         {
+            this.magics = new List<IMagic>();
             this.mana = mana;
             this.maxValue = maxValue;
         }
