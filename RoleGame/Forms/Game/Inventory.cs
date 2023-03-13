@@ -31,9 +31,10 @@ namespace RoleGame
             character.Inventory.AddArtefact(artefact);
             inventory.Remove(artefact);
         }
-        public void UseArtefact(InventoryCell artefact,Character character)
+        public void UseArtefact(InventoryCell artefact,Character character,int power)
         {
-            var type = artefact.Cell.GetType();
+            artefact.Cell.Perform(character, power);
+            
         }
     }
 }

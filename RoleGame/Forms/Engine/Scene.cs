@@ -1,4 +1,5 @@
-﻿using RoleGame;
+﻿using Forms.Game;
+using RoleGame;
 
 namespace Forms.Engine
 {
@@ -9,6 +10,7 @@ namespace Forms.Engine
         private KeysConfig config;
 
         private List<IGameObject> objects;
+        private Tree tree; 
 
         private int playableCharacterIndex;
         private int aimIndex;
@@ -24,6 +26,8 @@ namespace Forms.Engine
             config = KeysConfig.LoadConfig();
             back = Image.FromFile("resources\\background.jpg");
             objects = new List<IGameObject>();
+            Tree tree = new Tree(new Vector(500, 500), new Vector(100, 100), 100);
+            
             addObject(new Character("Человек", characterState.normal, characterRace.dwarf, characterGender.male, new Vector(100, 100), new Vector(100, 100), new Inventory()));
             this.playableCharacterIndex = 0;
         }
@@ -46,6 +50,7 @@ namespace Forms.Engine
 
         public void DrawObjects(Graphics g)
         {
+            tree.Draw()
             foreach(var obj in objects)
             {
                 obj.Draw(g);
