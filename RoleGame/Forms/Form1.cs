@@ -7,7 +7,8 @@ namespace Forms
     {
         private Scene currentScene;
         private RadioButton[] genderRadioButtons;
-        //private RadioButton[] ;
+        private RadioButton[] raceRadioButtons;
+        private RadioButton[] stateRadioButtons;
 
         public Form1()
         {
@@ -21,8 +22,23 @@ namespace Forms
                 this.radioButton1,
                 this.radioButton2
             };
-
-
+            raceRadioButtons = new RadioButton[]
+            {
+                this.radioButton3,
+                this.radioButton4,
+                this.radioButton5,
+                this.radioButton6,
+                this.radioButton7
+            };
+            stateRadioButtons = new RadioButton[]
+            {
+                this.radioButton8,
+                this.radioButton9,
+                this.radioButton10,
+                this.radioButton11,
+                this.radioButton12,
+                this.radioButton13
+            };
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -45,45 +61,23 @@ namespace Forms
         private void button1_Click(object sender, EventArgs e)
         {
             string name = this.textBox1.Text;
-            characterGender gender = new characterGender();
-            characterRace race = new characterRace();
-            characterState state = new characterState();
             int xPos = Convert.ToInt32(this.textBox2.Text);
             int yPos = Convert.ToInt32(this.textBox3.Text);
-
-
-            gender = (characterGender)Array.IndexOf(genderRadioButtons, genderRadioButtons.FirstOrDefault(x => x.Checked == true));
-
-            if (this.radioButton3.Checked == true)
-                race = characterRace.human;
-            else if (this.radioButton4.Checked == true)
-                race = characterRace.dwarf;
-            else if (this.radioButton5.Checked == true)
-                race = characterRace.elf;
-            else if (this.radioButton6.Checked == true)
-                race = characterRace.orc;
-            else if (this.radioButton7.Checked == true)
-                race = characterRace.goblin;
-
-            if (this.radioButton8.Checked == true)
-                state = characterState.normal;
-            else if (this.radioButton9.Checked == true)
-                state = characterState.weak;
-            else if (this.radioButton10.Checked == true)
-                state = characterState.sick;
-            else if (this.radioButton11.Checked == true)
-                state = characterState.poisoned;
-            else if (this.radioButton12.Checked == true)
-                state = characterState.paralyzed;
-            else if (this.radioButton13.Checked == true)
-                state = characterState.dead;
-
+            characterGender gender = (characterGender)Array.IndexOf(genderRadioButtons, genderRadioButtons.FirstOrDefault(x => x.Checked == true));
+            characterRace race = (characterRace)Array.IndexOf(raceRadioButtons, raceRadioButtons.FirstOrDefault(x => x.Checked == true));
+            characterState state = (characterState)Array.IndexOf(stateRadioButtons, stateRadioButtons.FirstOrDefault(x => x.Checked == true));
             this.currentScene.addObject(new Character(name, state,race, gender, new Vector(xPos, yPos), new Vector(100, 100),new Inventory()));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string name = this.textBox1.Text;
+            int xPos = Convert.ToInt32(this.textBox2.Text);
+            int yPos = Convert.ToInt32(this.textBox3.Text);
+            characterGender gender = (characterGender)Array.IndexOf(genderRadioButtons, genderRadioButtons.FirstOrDefault(x => x.Checked == true));
+            characterRace race = (characterRace)Array.IndexOf(raceRadioButtons, raceRadioButtons.FirstOrDefault(x => x.Checked == true));
+            characterState state = (characterState)Array.IndexOf(stateRadioButtons, stateRadioButtons.FirstOrDefault(x => x.Checked == true));
+            this.currentScene.addObject(new Character(name, state, race, gender, new Vector(xPos, yPos), new Vector(100, 100), new Inventory()));
         }
 
         private void button9_Click(object sender, EventArgs e)
