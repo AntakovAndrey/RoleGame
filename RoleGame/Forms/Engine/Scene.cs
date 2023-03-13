@@ -50,7 +50,7 @@ namespace Forms.Engine
 
         public void DrawObjects(Graphics g)
         {
-            tree.Draw()
+            tree.Draw(g);
             foreach(var obj in objects)
             {
                 obj.Draw(g);
