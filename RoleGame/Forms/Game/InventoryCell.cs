@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forms.Game.Magic
+namespace Forms.Game
 {
     public class InventoryCell
     {
         protected Artefact cell;
         public Artefact Cell
-        { get => cell;set => cell = value; }
+        { get => cell; set => cell = value; }
         public InventoryCell(Artefact cell)
         {
             this.cell = cell;

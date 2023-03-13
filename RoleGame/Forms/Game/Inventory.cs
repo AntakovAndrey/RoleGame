@@ -1,4 +1,4 @@
-﻿using Forms.Game.Magic;
+﻿using Forms.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace RoleGame
 
         public Inventory() { }
         protected List<InventoryCell> inventory;
-        public List<InventoryCell> Inventory1
+        public List<InventoryCell> Cells
         { get => inventory; set => inventory = value; }
         public Inventory(List<InventoryCell> inventory)
         {

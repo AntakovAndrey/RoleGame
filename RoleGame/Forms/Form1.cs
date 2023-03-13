@@ -5,14 +5,24 @@ namespace Forms
 {
     public partial class Form1 : Form
     {
-        Scene currentScene;
+        private Scene currentScene;
+        private RadioButton[] genderRadioButtons;
+        //private RadioButton[] ;
 
         public Form1()
         {
-            this.currentScene = new Scene();
             InitializeComponent();
+            this.currentScene = new Scene();
             Render.SetResolution(1000, 1000);
             Render.SetScene(currentScene);
+
+            genderRadioButtons = new RadioButton[]
+            {
+                this.radioButton1,
+                this.radioButton2
+            };
+
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -41,10 +51,8 @@ namespace Forms
             int xPos = Convert.ToInt32(this.textBox2.Text);
             int yPos = Convert.ToInt32(this.textBox3.Text);
 
-            if(this.radioButton1.Checked==true)
-                gender=characterGender.male;
-            else
-                gender = characterGender.female;
+
+            gender = (characterGender)Array.IndexOf(genderRadioButtons, genderRadioButtons.FirstOrDefault(x => x.Checked == true));
 
             if (this.radioButton3.Checked == true)
                 race = characterRace.human;
@@ -76,6 +84,26 @@ namespace Forms
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.currentScene.PlayableCharacterIndex=this.listBox1.SelectedIndex;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.currentScene.PlayableCharacterIndex = this.listBox1.SelectedIndex;
         }
     }
 }

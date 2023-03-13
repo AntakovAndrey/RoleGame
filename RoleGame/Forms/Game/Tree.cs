@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Forms
+namespace Forms.Game
 {
     public delegate void ThreadStart(List<Character> characters);
     public class Tree : IGameObject
@@ -16,21 +16,21 @@ namespace Forms
         private Vector size;
         private int health;
         private List<Character> characters;
-        public Tree(Vector currentPosition, Vector size,int health)
+        public Tree(Vector currentPosition, Vector size, int health)
         {
             this.currentPosition = currentPosition;
             this.size = size;
-            this.health=health;
+            this.health = health;
         }
         public void Damage()
         {
             ThreadStart threadStart;
             var start = new System.Threading.ThreadStart(Start);
-            var thread = new System.Threading.Thread(start);
+            var thread = new Thread(start);
             thread.Start();
         }
-        Vector IGameObject.Position { get => this.currentPosition; set => this.currentPosition = value; }
-        Vector IGameObject.Size { get => this.size; set => this.size = value; }
+        Vector IGameObject.Position { get => currentPosition; set => currentPosition = value; }
+        Vector IGameObject.Size { get => size; set => size = value; }
         public void Draw2(Graphics graphics)
         {
             Image.FromFile("resources\\tree2.png");

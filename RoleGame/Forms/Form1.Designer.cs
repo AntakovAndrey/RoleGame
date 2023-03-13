@@ -77,6 +77,7 @@ namespace Forms
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -402,6 +403,7 @@ namespace Forms
             this.button3.TabIndex = 6;
             this.button3.Text = "Выбрать персонажа";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -411,6 +413,7 @@ namespace Forms
             this.button4.TabIndex = 7;
             this.button4.Text = "Выбрать цель";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // listBox3
             // 
@@ -503,7 +506,7 @@ namespace Forms
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1382, 509);
+            this.button6.Location = new System.Drawing.Point(1382, 500);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(130, 23);
             this.button6.TabIndex = 17;
@@ -521,7 +524,7 @@ namespace Forms
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(1381, 666);
+            this.button8.Location = new System.Drawing.Point(1381, 656);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(130, 23);
             this.button8.TabIndex = 19;
@@ -536,6 +539,7 @@ namespace Forms
             this.button9.TabIndex = 20;
             this.button9.Text = "Применить магию";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -545,12 +549,22 @@ namespace Forms
             this.button10.TabIndex = 21;
             this.button10.Text = "Применить арефакт";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(1020, 770);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(490, 200);
+            this.textBox4.TabIndex = 22;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1527, 1000);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -641,5 +655,6 @@ namespace Forms
         private Button button8;
         private Button button9;
         private Button button10;
+        private TextBox textBox4;
     }
 }

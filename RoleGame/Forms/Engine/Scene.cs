@@ -11,7 +11,13 @@ namespace Forms.Engine
         private List<IGameObject> objects;
 
         private int playableCharacterIndex;
+        private int aimIndex;
 
+        public KeysConfig Config { get { return config; } }
+
+        public int PlayableCharacterIndex { get { return playableCharacterIndex; } set { playableCharacterIndex = value; } }
+        public int AimIndex { get { return aimIndex; } set { aimIndex = value; } }
+        
 
         public Scene()        
         {
@@ -22,8 +28,6 @@ namespace Forms.Engine
             addObject(new Character("Человек", characterState.normal, characterRace.dwarf, characterGender.male, new Vector(100, 100), new Vector(100, 100), new Inventory()));
             this.playableCharacterIndex = 0;
         }
-
-        public KeysConfig Config { get { return config; } }
 
         public void addObject(IGameObject gameObject)
         {
