@@ -57,7 +57,7 @@ namespace RoleGame
             this.state = state;
             this.race = race;
             this.gender = gender;
-
+            health = 100;
             this.id = (this.name, this.state, this.race, this.gender).GetHashCode();
 
             this.characterImage = this.LoadImage(race);
@@ -139,7 +139,7 @@ namespace RoleGame
         }
         public override string ToString()
         {
-            return $"Имя {name}, Жизнь {health}";
+            return $"Имя {name}, Жизнь {Health}";
         }
     }
 }

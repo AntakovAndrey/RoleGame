@@ -200,7 +200,8 @@ namespace Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.currentScene.PlayableCharacterIndex = this.listBox1.SelectedIndex;
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
+                character.CurrentAimIndex = this.listBox2.SelectedIndex;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -237,6 +238,12 @@ namespace Forms
         {
             if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
                 character.PerfomDamage(this.currentScene.Objects[character.CurrentAimIndex]);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
+                character.Inventory.SelectedItemIndex = this.listBox5.SelectedIndex;
         }
     }
 }

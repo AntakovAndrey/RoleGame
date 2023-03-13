@@ -9,7 +9,7 @@ namespace RoleGame
 {
     public class Inventory
     {
-
+        public int SelectedItemIndex { get; set; }
         public Inventory() 
         {
             this.inventory = new List<InventoryCell>();
