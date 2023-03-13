@@ -1,5 +1,12 @@
 using Forms.Engine;
+using Forms.Game.Artefacts;
+using Forms.Game.Artefacts.BasiliskEye;
+using Forms.Game.Artefacts.BattleOfLivingWater;
+using Forms.Game.Artefacts.BottleOfLivingWater;
+using Forms.Game.Artefacts.Decoct;
+using Forms.Game.Artefacts.LightningStaff;
 using RoleGame;
+using RoleGame.Magic;
 
 namespace Forms
 {
@@ -9,7 +16,9 @@ namespace Forms
         private RadioButton[] genderRadioButtons;
         private RadioButton[] raceRadioButtons;
         private RadioButton[] stateRadioButtons;
+        private Artefact[] allArtefacts;
 
+        
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +48,60 @@ namespace Forms
                 this.radioButton12,
                 this.radioButton13
             };
+            
+
+            updateCurrentMagicsList();
+        }
+
+        public void updateCurrentMagicsList()
+        {
+            if (this.currentScene.Objects[currentScene.PlayableCharacterIndex] is CharacterMag mag)
+                this.listBox3.Items.AddRange(mag.Magics.ToArray());
+        }
+
+        public void updateAllMagicsList()
+        {
+            if (this.currentScene.Objects[currentScene.PlayableCharacterIndex] is CharacterMag mag)
+            {
+                IMagic[] allMagics = new IMagic[]
+                {
+                    new AddHealth(mag),
+                    new Alive(mag),
+                    new AniPoison(mag),
+                    new Heal(mag),
+                    new Otomri(mag)
+                };
+                this.listBox4.Items.AddRange(allMagics);
+            }
+        }
+
+        public void updateAllArtefactsList()
+        {
+            if (this.currentScene.Objects[currentScene.PlayableCharacterIndex] is CharacterMag mag)
+            {
+                Artefact[] allArtefacts = new Artefact[]
+                {
+                    new SmallBattleOfLivingWater(),
+                    new AvvarageBattleOfLivingWater(),
+                    new BigBattleOfLivingWater(),
+                    new BasiliskEye(),
+                    new SmallBottleOfDeadWater(),
+                    new AvvarageBattleOfDeadWater(),
+                    new BigBattleOfDeadWater(),
+                    new Decoct(),
+                    new LightningStaff()
+                };
+                this.listBox6.Items.AddRange(allArtefacts);
+            }
+        }
+        public void ListArtefact()
+        {
+            List<Artefact> artefacts = new List<Artefact>();
+            if(this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
+                foreach(var cell in character.Inventory.Cells)
+                    artefacts.Add(cell.Cell);
+            this.listBox5.Items.AddRange(artefacts.ToArray());
+
         }
 
         public void updateCharactersList()

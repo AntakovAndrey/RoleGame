@@ -14,6 +14,8 @@ namespace Forms.Engine
         private int playableCharacterIndex;
         private int aimIndex;
 
+        public List<IGameObject> Objects
+        { get=>Objects;}
         public KeysConfig Config { get { return config; } }
 
         public int PlayableCharacterIndex { get { return playableCharacterIndex; } set { playableCharacterIndex = value; } }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoleGame.Magic
 {
-    internal interface IMagic
+    public interface IMagic
     {
         void PerformMagic();
         void PerformMagic(Character aimCharacter);
