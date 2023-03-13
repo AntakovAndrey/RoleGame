@@ -74,5 +74,9 @@ namespace Forms.Game
                 Thread.Sleep(300);
             }
         }
+        public override string ToString()
+        {
+            return $"Дерево жизнь {health}";
+        }
     }
 }

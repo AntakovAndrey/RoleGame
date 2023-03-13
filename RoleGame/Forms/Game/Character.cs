@@ -139,7 +139,7 @@ namespace RoleGame
         }
         public override string ToString()
         {
-            return $"Имя {name}, Жизнь {health}";
+            return $"Имя {name}, Жизнь {Health}";
         }
     }
 }
