@@ -10,7 +10,7 @@ namespace Forms.Game.Artefacts.BottleOfLivingWater
 {
     internal class AvvarageBattleOfDeadWater : Artefact
     {
-        public override void Perform(IGameObject aim)
+        public override void Perform(IGameObject aim, int power)
         {
             if (aim is CharacterMag mag)
                 mag.Mana += 25;
