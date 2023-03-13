@@ -1,6 +1,6 @@
 ﻿namespace Forms.Engine
 {
-    internal interface IGameObject
+    public interface IGameObject
     {
         Vector Position { get; set; }
         Vector Size { get; set; }
