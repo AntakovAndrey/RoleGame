@@ -33,5 +33,9 @@ namespace Forms.Game.Artefacts.BottleOfLivingWater
                 mag.Mana+= 10;
            // Console.WriteLine("Mана персонажа увеличено на 10 едениц");
         }
+        public override string ToString()
+        {
+            return "Маленька бутылка мертвой воды";
+        }
     }
 }

@@ -18,6 +18,11 @@ namespace Forms.Game.Artefacts.Decoct
                     return;
                 character.State = characterState.poisoned;
             }
+            
+        }
+        public override string ToString()
+        {
+            return "Декокт";
         }
     }
 }

@@ -61,7 +61,12 @@ namespace Forms.Engine
 
         public void movePlayableCharacter(Vector direction)
         {
-            this.objects[this.playableCharacterIndex].Move(direction);
+            
+            if (this.objects[this.playableCharacterIndex] is Character character)
+            {
+                if (character.State != characterState.paralyzed || character.State != characterState.dead)
+                    this.objects[this.playableCharacterIndex].Move(direction);
+            }
         }
     }
 }

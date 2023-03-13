@@ -19,5 +19,9 @@ namespace Forms.Game.Artefacts.BasiliskEye
                 character.State = characterState.paralyzed;
             }
         }
+        public override string ToString()
+        {
+            return "Глаз василиска";
+        }
     }
 }

@@ -55,6 +55,11 @@ namespace RoleGame.Magic
                 magCharacter.Mana -= minMana * 1.5;
                 return;
             }
+            
+        }
+        public override string ToString()
+        {
+            return "Оживить";
         }
     }
 }
