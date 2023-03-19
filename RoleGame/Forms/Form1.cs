@@ -179,12 +179,26 @@ namespace Forms
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is CharacterMag mag)
+                mag.Magics[mag.CurrentMagicIndex].PerformMagic((Character)this.currentScene.Objects[mag.CurrentAimIndex]);
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
+            updateAimsList();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
+                character.Inventory.UseArtefact(character.Inventory.Cells[character.Inventory.SelectedItemIndex], (Character)this.currentScene.Objects[character.CurrentAimIndex], 20);
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
+            updateAimsList();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -238,6 +252,12 @@ namespace Forms
         {
             if (this.currentScene.Objects[this.currentScene.PlayableCharacterIndex] is Character character)
                 character.PerfomDamage(this.currentScene.Objects[character.CurrentAimIndex]);
+            updateCurrentMagicsList();
+            updateAllMagicsList();
+            updateCurrentArtefactsList();
+            updateAllArtefactsList();
+            updateCharactersList();
+            updateAimsList();
         }
 
         private void button7_Click(object sender, EventArgs e)
